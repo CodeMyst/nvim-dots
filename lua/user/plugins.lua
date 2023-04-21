@@ -40,6 +40,7 @@ lazy.setup({
     {'lewis6991/gitsigns.nvim'},
     {'akinsho/toggleterm.nvim'},
     {'AndrewRadev/tagalong.vim'},
+    {'m4xshen/autoclose.nvim'},
 
     {
         'VonHeikemen/lsp-zero.nvim',
