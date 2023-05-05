@@ -41,6 +41,7 @@ lazy.setup({
     {'akinsho/toggleterm.nvim'},
     {'AndrewRadev/tagalong.vim'},
     {'m4xshen/autoclose.nvim'},
+    {'christoomey/vim-tmux-navigator'},
 
     {
         'VonHeikemen/lsp-zero.nvim',

@@ -18,8 +18,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -38,4 +36,9 @@ vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
 vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
 vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()()<cr>')
 vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()()<cr>')
+
+vim.keymap.set('n', '<C-h>', '<cmd>TmuxNavigateLeft<cr>')
+vim.keymap.set('n', '<C-l>', '<cmd>TmuxNavigateRight<cr>')
+vim.keymap.set('n', '<C-j>', '<cmd>TmuxNavigateDown<cr>')
+vim.keymap.set('n', '<C-k>', '<cmd>TmuxNavigateUp<cr>')
 
