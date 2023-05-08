@@ -18,4 +18,5 @@ load('user.plugins.gitsigns')
 load('user.plugins.toggleterm')
 load('user.plugins.lsp')
 load('user.plugins.autoclose')
+load('user.plugins.harpoon')
 

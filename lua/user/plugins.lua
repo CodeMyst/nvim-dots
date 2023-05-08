@@ -42,6 +42,7 @@ lazy.setup({
     {'AndrewRadev/tagalong.vim'},
     {'m4xshen/autoclose.nvim'},
     {'christoomey/vim-tmux-navigator'},
+    {'theprimeagen/harpoon'},
 
     {
         'VonHeikemen/lsp-zero.nvim',
