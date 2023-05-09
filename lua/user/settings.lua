@@ -26,3 +26,5 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.laststatus = 3
 
+vim.filetype.add { extension = { jbuilder = 'ruby' } }
+
