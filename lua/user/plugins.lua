@@ -43,6 +43,7 @@ lazy.setup({
     {'m4xshen/autoclose.nvim'},
     {'christoomey/vim-tmux-navigator'},
     {'theprimeagen/harpoon'},
+    {'folke/todo-comments.nvim'},
 
     {
         'VonHeikemen/lsp-zero.nvim',
