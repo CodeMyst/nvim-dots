@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local navic = require('nvim-navic')
 
 lsp.preset("recommended")
 
@@ -6,6 +7,10 @@ lsp.nvim_workspace()
 
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
+
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
 
     if client.name == 'omnisharp' then
         local tokenModifiers = client.server_capabilities.semanticTokensProvider.legend.tokenModifiers

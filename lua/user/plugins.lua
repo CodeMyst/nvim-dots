@@ -44,6 +44,8 @@ lazy.setup({
     {'christoomey/vim-tmux-navigator'},
     {'theprimeagen/harpoon'},
     {'folke/todo-comments.nvim'},
+    {'SmiteshP/nvim-navic'},
+    {'utilyre/barbecue.nvim'},
 
     {
         'VonHeikemen/lsp-zero.nvim',
