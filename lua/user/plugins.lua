@@ -31,6 +31,7 @@ lazy.setup({
     {'catppuccin/nvim', name = 'catppuccin'},
     {'nvim-treesitter/nvim-treesitter'},
     {'nvim-treesitter/nvim-treesitter-textobjects'},
+    {'nvim-treesitter/nvim-treesitter-context'},
     {'numToStr/Comment.nvim'},
     {'tpope/vim-surround'},
     {'nvim-tree/nvim-tree.lua'},
