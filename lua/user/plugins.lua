@@ -45,8 +45,7 @@ lazy.setup({
     {'christoomey/vim-tmux-navigator'},
     {'theprimeagen/harpoon'},
     {'folke/todo-comments.nvim'},
-    {'SmiteshP/nvim-navic'},
-    {'utilyre/barbecue.nvim'},
+    {'rose-pine/neovim', name = 'rose-pine'},
 
     {
         'VonHeikemen/lsp-zero.nvim',
