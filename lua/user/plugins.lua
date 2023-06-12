@@ -65,6 +65,10 @@ lazy.setup({
             {'L3MON4D3/LuaSnip'},
             {'jose-elias-alvarez/null-ls.nvim'},
             {'folke/trouble.nvim'},
+            {'hrsh7th/cmp-path'},
+            {'hrsh7th/cmp-buffer'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'rafamadriz/friendly-snippets'},
         }
     }
 })
