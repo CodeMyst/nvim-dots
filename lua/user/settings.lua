@@ -20,7 +20,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-vim.cmd.colorscheme('rose-pine')
+vim.cmd.colorscheme('catppuccin')
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
