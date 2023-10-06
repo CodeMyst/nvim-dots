@@ -47,6 +47,8 @@ lazy.setup({
     {'folke/todo-comments.nvim'},
     {'rose-pine/neovim', name = 'rose-pine'},
     {'ellisonleao/gruvbox.nvim', priority = 1000 },
+    { 'projekt0n/github-nvim-theme' },
+    { 'rebelot/kanagawa.nvim' },
     {'f-person/auto-dark-mode.nvim', config = {
         update_interval = 1000,
         set_dark_mode = function()

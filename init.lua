@@ -20,4 +20,5 @@ load('user.plugins.lsp')
 load('user.plugins.autoclose')
 load('user.plugins.harpoon')
 load('user.plugins.todo')
+load('user.plugins.node')
 
