@@ -55,4 +55,3 @@ vim.diagnostic.config({
 })
 
 require('null-ls').setup({})
-require('trouble').setup({})

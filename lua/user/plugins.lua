@@ -26,9 +26,8 @@ lazy.path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 lazy.opts = {}
 
 lazy.setup({
-    {'folke/tokyonight.nvim'},
     {'nvim-lualine/lualine.nvim'},
-    {'catppuccin/nvim', name = 'catppuccin'},
+    -- {'catppuccin/nvim', name = 'catppuccin'},
     {'nvim-treesitter/nvim-treesitter'},
     {'nvim-treesitter/nvim-treesitter-textobjects'},
     {'nvim-treesitter/nvim-treesitter-context'},
@@ -47,7 +46,6 @@ lazy.setup({
     {'folke/todo-comments.nvim'},
     {'rose-pine/neovim', name = 'rose-pine'},
     {'ellisonleao/gruvbox.nvim', priority = 1000 },
-    { 'projekt0n/github-nvim-theme' },
     { 'rebelot/kanagawa.nvim' },
     {'f-person/auto-dark-mode.nvim', config = {
         update_interval = 1000,
@@ -90,11 +88,18 @@ lazy.setup({
             {'hrsh7th/cmp-nvim-lsp'},
             {'L3MON4D3/LuaSnip'},
             {'jose-elias-alvarez/null-ls.nvim'},
-            {'folke/trouble.nvim'},
             {'hrsh7th/cmp-path'},
             {'hrsh7th/cmp-buffer'},
             {'saadparwaiz1/cmp_luasnip'},
             {'rafamadriz/friendly-snippets'},
+        }
+    },
+
+    {
+        'njegg/dvd.nvim',
+        dependencies = {
+            {'eandrju/cellular-automaton.nvim'},
+            {'uga-rosa/utf8.nvim'}
         }
     }
 })

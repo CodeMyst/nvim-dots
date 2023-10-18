@@ -9,7 +9,7 @@ load('user.keymaps')
 load('user.commands')
 
 load('user.plugins.lualine')
-load('user.plugins.catppuccin')
+-- load('user.plugins.catppuccin')
 load('user.plugins.treesitter')
 load('user.plugins.comment')
 load('user.plugins.nvim-tree')
