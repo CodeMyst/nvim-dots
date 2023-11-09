@@ -31,6 +31,7 @@ vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>')
 vim.keymap.set('n', '<leader>fs', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 vim.keymap.set('n', '<leader>fo', '<cmd>Telescope lsp_document_symbols<cr>')
+vim.keymap.set('n', '<leader>gs', '<cmd>Telescope git_status<cr>')
 
 vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>')
 vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
