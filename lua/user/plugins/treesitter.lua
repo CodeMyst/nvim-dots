@@ -3,6 +3,10 @@ require('nvim-treesitter.configs').setup({
         enable = true,
     },
 
+    endwise = {
+        enable = true,
+    },
+
     textobjects = {
         select = {
             enable = true,

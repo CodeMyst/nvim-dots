@@ -46,7 +46,16 @@ lazy.setup({
     {'folke/todo-comments.nvim'},
     {'rose-pine/neovim', name = 'rose-pine'},
     {'ellisonleao/gruvbox.nvim', priority = 1000 },
-    { 'rebelot/kanagawa.nvim' },
+    {'rebelot/kanagawa.nvim'},
+    {'RRethy/nvim-treesitter-endwise'},
+    {'ramojus/mellifluous.nvim',
+        config = function()
+            require("mellifluous").setup({
+                color_set = 'alduin'
+            })
+            vim.cmd('colorscheme mellifluous')
+        end
+    },
     {'f-person/auto-dark-mode.nvim', config = {
         update_interval = 1000,
         set_dark_mode = function()
@@ -101,6 +110,23 @@ lazy.setup({
             {'eandrju/cellular-automaton.nvim'},
             {'uga-rosa/utf8.nvim'}
         }
+    },
+
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'antoinemadec/FixCursorHold.nvim',
+            'zidhuss/neotest-minitest',
+            'olimorris/neotest-rspec'
+        },
+        config = function()
+            require("neotest").setup({
+                adapters = {
+                    require("neotest-minitest")
+                },
+            })
+        end
     }
 })
 
