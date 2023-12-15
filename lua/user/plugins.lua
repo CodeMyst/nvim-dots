@@ -48,6 +48,11 @@ lazy.setup({
     {'ellisonleao/gruvbox.nvim', priority = 1000 },
     {'rebelot/kanagawa.nvim'},
     {'RRethy/nvim-treesitter-endwise'},
+    {'chentoast/marks.nvim',
+        config = function()
+            require('marks').setup{}
+        end
+    },
     {'ramojus/mellifluous.nvim',
         config = function()
             require("mellifluous").setup({
