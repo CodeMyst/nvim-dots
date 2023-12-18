@@ -27,7 +27,6 @@ lazy.opts = {}
 
 lazy.setup({
     {'nvim-lualine/lualine.nvim'},
-    -- {'catppuccin/nvim', name = 'catppuccin'},
     {'nvim-treesitter/nvim-treesitter'},
     {'nvim-treesitter/nvim-treesitter-textobjects'},
     {'nvim-treesitter/nvim-treesitter-context'},
@@ -46,33 +45,11 @@ lazy.setup({
     {'folke/todo-comments.nvim'},
     {'rose-pine/neovim', name = 'rose-pine'},
     {'ellisonleao/gruvbox.nvim', priority = 1000 },
-    {'rebelot/kanagawa.nvim'},
     {'RRethy/nvim-treesitter-endwise'},
     {'chentoast/marks.nvim',
         config = function()
             require('marks').setup{}
         end
-    },
-    {'ramojus/mellifluous.nvim',
-        config = function()
-            require("mellifluous").setup({
-                color_set = 'alduin'
-            })
-            vim.cmd('colorscheme mellifluous')
-        end
-    },
-    {'f-person/auto-dark-mode.nvim', config = {
-        update_interval = 1000,
-        set_dark_mode = function()
-            vim.api.nvim_set_option("background", "dark")
-        end,
-        set_light_mode = function()
-            vim.api.nvim_set_option("background", "light")
-        end,
-    },
-    init = function()
-        require("auto-dark-mode").init()
-    end
     },
 
     {
