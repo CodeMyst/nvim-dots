@@ -46,6 +46,7 @@ lazy.setup({
     {'rose-pine/neovim', name = 'rose-pine'},
     {'ellisonleao/gruvbox.nvim', priority = 1000 },
     {'RRethy/nvim-treesitter-endwise'},
+    {'klen/nvim-test'},
     {'chentoast/marks.nvim',
         config = function()
             require('marks').setup{}

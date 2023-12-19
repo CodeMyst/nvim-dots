@@ -21,4 +21,5 @@ load('user.plugins.autoclose')
 load('user.plugins.harpoon')
 load('user.plugins.todo')
 load('user.plugins.node')
+load('user.plugins.test')
 
