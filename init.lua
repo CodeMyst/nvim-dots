@@ -58,6 +58,8 @@ vim.g.loaded_vimball           = 1
 vim.g.loaded_vimballPlugin     = 1
 vim.g.loaded_zip               = 1
 vim.g.loaded_zipPlugin         = 1
+vim.g.loaded_netrw             = 1
+vim.g.loaded_netrwPlugin       = 1
 
 vim.g.laststatus = 3
 
@@ -115,13 +117,19 @@ require("lazy").setup({
 
     "kevinhwang91/nvim-bqf",
 
-    "windwp/nvim-ts-autotag",
+    {
+        "windwp/nvim-ts-autotag",
+        event = "VeryLazy",
+    },
 
     "m4xshen/autoclose.nvim",
 
-    "RRethy/nvim-treesitter-endwise",
+    {
+        "RRethy/nvim-treesitter-endwise",
+        event = "VeryLazy"
+    },
 
-    { "numToStr/Comment.nvim", lazy = false },
+    { "numToStr/Comment.nvim" },
     { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
 
     {
@@ -172,6 +180,7 @@ require("lazy").setup({
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+        event = "VeryLazy",
         config = function()
             local configs = require("nvim-treesitter.configs")
 
@@ -222,6 +231,7 @@ require("lazy").setup({
 
     {
         "nvim-tree/nvim-tree.lua",
+        event = "VeryLazy",
         config = function()
             require("nvim-tree").setup({
                 hijack_cursor = false,
@@ -244,6 +254,7 @@ require("lazy").setup({
 
     {
         "akinsho/toggleterm.nvim",
+        event = "VeryLazy",
         config = function()
             require('toggleterm').setup({
                 open_mapping = [[<c-\>]],
@@ -256,6 +267,7 @@ require("lazy").setup({
 
     {
         "klen/nvim-test",
+        event = "VeryLazy",
         config = function()
             require('nvim-test').setup {
                 term = 'toggleterm',
