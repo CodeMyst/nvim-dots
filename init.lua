@@ -92,6 +92,8 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<cr><cr>')
+vim.keymap.set('n', '<leader>tn', '<cmd>TestNear<cr><cr>')
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
