@@ -192,6 +192,7 @@ require("lazy").setup({
                 endwise = { enable = true },
                 indent = { enable = true },
                 autotag = { enable = true, enable_close_on_slash = false },
+                matchup = { enable = true }
             })
         end,
     },
@@ -283,6 +284,8 @@ require("lazy").setup({
             }
         end
     },
+
+    { 'andymass/vim-matchup' }
 })
 
 -- setup comment
