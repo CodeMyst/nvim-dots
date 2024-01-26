@@ -173,6 +173,7 @@ require("lazy").setup({
             { "<leader>fr", "<cmd>Telescope resume<cr>" },
             { "<leader>fo", "<cmd>Telescope lsp_document_symbols<cr>" },
             { "<leader>fs", "<cmd>Telescope git_status<cr>" },
+            { "<leader>fb", "<cmd>Telescope git_branches<cr>" },
         },
         dependencies = {
             "nvim-lua/plenary.nvim",
