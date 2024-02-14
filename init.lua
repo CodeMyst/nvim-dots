@@ -94,6 +94,7 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<cr><cr>')
 vim.keymap.set('n', '<leader>tn', '<cmd>TestNear<cr><cr>')
+vim.keymap.set('n', '<leader>r', '<cmd>TermExec cmd="zig build run"<cr><cr>')
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -286,7 +287,7 @@ require("lazy").setup({
         end
     },
 
-    { 'andymass/vim-matchup' }
+    { 'andymass/vim-matchup' },
 })
 
 -- setup comment
@@ -304,6 +305,10 @@ require("mason-lspconfig").setup_handlers({
     function(server_name)
         require("lspconfig")[server_name].setup({
             capabilities = capabilities,
+        })
+
+        require("lspconfig").zls.setup({
+            cmd = { "/Users/codemyst/code/zls/zig-out/bin/zls" }
         })
     end,
 })
