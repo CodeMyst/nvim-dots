@@ -192,7 +192,7 @@ require("lazy").setup({
                 ensure_installed = "all",
                 highlight = { enable = true },
                 endwise = { enable = true },
-                indent = { enable = true },
+                indent = { enable = false },
                 autotag = { enable = true, enable_close_on_slash = false },
                 matchup = { enable = true }
             })
