@@ -33,6 +33,7 @@ vim.opt.completeopt = 'longest,menuone'
 vim.opt.list = true
 vim.o.cmdheight = 0
 vim.opt.guicursor = ""
+vim.opt.smartcase = true
 
 vim.opt.listchars = {
     tab      = '→ ',
@@ -266,6 +267,7 @@ require("lazy").setup({
                 hide_numbers = true,
                 direction = 'horizontal',
                 size = 20,
+                shade_terminals = false,
             })
         end
     },
