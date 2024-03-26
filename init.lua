@@ -95,7 +95,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<cr><cr>')
 vim.keymap.set('n', '<leader>tn', '<cmd>TestNear<cr><cr>')
-vim.keymap.set('n', '<leader>r', '<cmd>TermExec cmd="zig build run"<cr><cr>')
+vim.keymap.set('n', '<leader>rc', ':lua require("ror.commands").list_commands()<CR>', { silent = true })
+vim.keymap.set('n', '<leader>rz', '<cmd>TermExec cmd="zig build run"<cr><cr>')
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -290,6 +291,18 @@ require("lazy").setup({
     },
 
     { 'andymass/vim-matchup' },
+
+    {
+        'weizheheng/ror.nvim',
+        config = function ()
+            require("ror").setup()
+        end
+    },
+
+    {
+      'stevearc/dressing.nvim',
+      opts = {},
+    },
 })
 
 -- setup comment
