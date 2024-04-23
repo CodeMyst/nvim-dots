@@ -137,14 +137,27 @@ require("lazy").setup({
     { "numToStr/Comment.nvim" },
     { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
 
+    -- {
+    --     "rose-pine/neovim",
+    --     priority = 1000,
+    --     lazy = false,
+    --     config = function()
+    --         require("rose-pine").setup({})
+    --
+    --         vim.cmd [[colorscheme rose-pine]]
+    --     end,
+    -- },
+
     {
-        "rose-pine/neovim",
+        "rebelot/kanagawa.nvim",
         priority = 1000,
         lazy = false,
         config = function()
-            require("rose-pine").setup({})
+            require("kanagawa").setup({
+                theme = "dragon"
+            })
 
-            vim.cmd [[colorscheme rose-pine]]
+            vim.cmd [[colorscheme kanagawa-dragon]]
         end,
     },
 
