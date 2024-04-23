@@ -317,7 +317,15 @@ require("lazy").setup({
       opts = {},
     },
 
-    { "folke/zen-mode.nvim" },
+    { "folke/zen-mode.nvim",
+        config = function ()
+            require('zen-mode').setup({
+                window = {
+                    width = 100
+                }
+            })
+        end
+    },
 })
 
 -- setup comment
