@@ -316,6 +316,8 @@ require("lazy").setup({
       'stevearc/dressing.nvim',
       opts = {},
     },
+
+    { "folke/zen-mode.nvim" },
 })
 
 -- setup comment
