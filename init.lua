@@ -34,6 +34,7 @@ vim.opt.list = true
 vim.o.cmdheight = 0
 vim.opt.guicursor = ""
 vim.opt.smartcase = true
+vim.opt.linebreak = true
 
 vim.opt.listchars = {
     tab      = '→ ',
