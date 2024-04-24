@@ -155,7 +155,14 @@ require("lazy").setup({
         lazy = false,
         config = function()
             require("kanagawa").setup({
-                theme = "dragon"
+                theme = "dragon",
+                commentStyle = { italic = false },
+                keywordStyle = { italic = false },
+                overrides = function()
+                    return {
+                        ["@variable.builtin"] = { italic = false },
+                    }
+                end
             })
 
             vim.cmd [[colorscheme kanagawa-dragon]]
