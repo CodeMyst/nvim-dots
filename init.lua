@@ -138,36 +138,44 @@ require("lazy").setup({
     { "numToStr/Comment.nvim" },
     { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
 
-    -- {
-    --     "rose-pine/neovim",
-    --     priority = 1000,
-    --     lazy = false,
-    --     config = function()
-    --         require("rose-pine").setup({})
-    --
-    --         vim.cmd [[colorscheme rose-pine]]
-    --     end,
-    -- },
-
     {
-        "rebelot/kanagawa.nvim",
+        "rose-pine/neovim",
         priority = 1000,
         lazy = false,
         config = function()
-            require("kanagawa").setup({
-                theme = "dragon",
-                commentStyle = { italic = false },
-                keywordStyle = { italic = false },
-                overrides = function()
-                    return {
-                        ["@variable.builtin"] = { italic = false },
-                    }
-                end
+            require("rose-pine").setup({
+                enable = {
+                    terminal = true
+                },
+
+                styles = {
+                    italic = false
+                }
             })
 
-            vim.cmd [[colorscheme kanagawa-dragon]]
+            vim.cmd [[colorscheme rose-pine]]
         end,
     },
+
+    -- {
+    --     "rebelot/kanagawa.nvim",
+    --     priority = 1000,
+    --     lazy = false,
+    --     config = function()
+    --         require("kanagawa").setup({
+    --             theme = "dragon",
+    --             commentStyle = { italic = false },
+    --             keywordStyle = { italic = false },
+    --             overrides = function()
+    --                 return {
+    --                     ["@variable.builtin"] = { italic = false },
+    --                 }
+    --             end
+    --         })
+    --
+    --         vim.cmd [[colorscheme kanagawa-dragon]]
+    --     end,
+    -- },
 
     {
         "neovim/nvim-lspconfig",
@@ -213,7 +221,6 @@ require("lazy").setup({
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = "all",
                 highlight = { enable = true },
                 endwise = { enable = true },
                 indent = { enable = false },
