@@ -194,6 +194,7 @@ require("lazy").setup({
             { "<leader><leader>", "<cmd>Telescope buffers<cr>" },
             { "<leader>ff", "<cmd>Telescope find_files<cr>" },
             { "<leader>fg", "<cmd>Telescope live_grep<cr>" },
+            { "<leader>fw", "<cmd>Telescope grep_string<cr>" },
             { "<leader>fr", "<cmd>Telescope resume<cr>" },
             { "<leader>fo", "<cmd>Telescope lsp_document_symbols<cr>" },
             { "<leader>fs", "<cmd>Telescope git_status<cr>" },
