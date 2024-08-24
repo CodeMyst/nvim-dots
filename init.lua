@@ -98,6 +98,7 @@ vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<cr><cr>')
 vim.keymap.set('n', '<leader>tn', '<cmd>TestNear<cr><cr>')
 vim.keymap.set('n', '<leader>rc', ':lua require("ror.commands").list_commands()<CR>', { silent = true })
 vim.keymap.set('n', '<leader>rz', '<cmd>TermExec cmd="zig build run"<cr><cr>')
+vim.keymap.set('n', '<leader>fm', ':lua require("conform").format()<CR>')
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -342,6 +343,18 @@ require("lazy").setup({
             })
         end
     },
+
+    {
+      'stevearc/conform.nvim',
+      opts = {},
+      config = function ()
+        require("conform").setup({
+          formatters_by_ft = {
+              go = { "gofmt" }
+          },
+        })
+      end
+    }
 })
 
 -- setup comment
