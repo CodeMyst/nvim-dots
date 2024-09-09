@@ -35,9 +35,10 @@ vim.o.cmdheight = 0
 vim.opt.guicursor = ""
 vim.opt.smartcase = true
 vim.opt.linebreak = true
+vim.opt.tabstop = 4
 
 vim.opt.listchars = {
-    tab      = '→ ',
+    tab      = '  ',
     nbsp     = '␣',
     trail    = '·',
 }
@@ -354,6 +355,10 @@ require("lazy").setup({
           },
         })
       end
+    },
+
+    {
+        'github/copilot.vim'
     }
 })
 
