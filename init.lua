@@ -378,10 +378,6 @@ require("mason-lspconfig").setup_handlers({
         require("lspconfig")[server_name].setup({
             capabilities = capabilities,
         })
-
-        require("lspconfig").zls.setup({
-            cmd = { "/Users/codemyst/code/zls/zig-out/bin/zls" }
-        })
     end,
 })
 
