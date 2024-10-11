@@ -159,6 +159,13 @@ require("lazy").setup({
         end,
     },
 
+    {
+        "tinted-theming/base16-vim",
+        config = function()
+            vim.cmd [[colorscheme base16-tomorrow-night]]
+        end,
+    },
+
     -- {
     --     "rebelot/kanagawa.nvim",
     --     priority = 1000,
