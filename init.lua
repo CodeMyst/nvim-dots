@@ -167,6 +167,13 @@ require("lazy").setup({
         end
     },
 
+    {
+        "tinted-theming/base16-vim",
+        config = function()
+            vim.cmd [[colorscheme base16-tomorrow-night]]
+        end,
+    },
+
     -- {
     --     "rebelot/kanagawa.nvim",
     --     priority = 1000,
@@ -396,10 +403,6 @@ require("mason-lspconfig").setup_handlers({
     function(server_name)
         require("lspconfig")[server_name].setup({
             capabilities = capabilities,
-        })
-
-        require("lspconfig").zls.setup({
-            cmd = { "/Users/codemyst/code/zls/zig-out/bin/zls" }
         })
     end,
 })
