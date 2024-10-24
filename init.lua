@@ -36,6 +36,7 @@ vim.opt.guicursor = ""
 vim.opt.smartcase = true
 vim.opt.linebreak = true
 vim.opt.tabstop = 4
+vim.g.base16_colorspace = 256
 
 vim.opt.listchars = {
     tab      = '  ',
@@ -140,23 +141,30 @@ require("lazy").setup({
     { "numToStr/Comment.nvim" },
     { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
 
+    -- {
+    --     "rose-pine/neovim",
+    --     priority = 1000,
+    --     lazy = false,
+    --     config = function()
+    --         require("rose-pine").setup({
+    --             enable = {
+    --                 terminal = true
+    --             },
+    --
+    --             styles = {
+    --                 italic = false
+    --             }
+    --         })
+    --
+    --         vim.cmd [[colorscheme rose-pine]]
+    --     end,
+    -- },
+
     {
-        "rose-pine/neovim",
-        priority = 1000,
-        lazy = false,
-        config = function()
-            require("rose-pine").setup({
-                enable = {
-                    terminal = true
-                },
-
-                styles = {
-                    italic = false
-                }
-            })
-
-            vim.cmd [[colorscheme rose-pine]]
-        end,
+        "tinted-theming/base16-vim",
+        config = function ()
+            vim.cmd [[colorscheme base16-tomorrow-night]]
+        end
     },
 
     -- {
@@ -213,6 +221,17 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
+        config = function ()
+            require("telescope").setup({
+                defaults = {
+                    layout_strategy = "flex",
+                    layout_config = {
+                        width = 0.99,
+                        height = 0.99,
+                    },
+                },
+            })
+        end
     },
 
     {
