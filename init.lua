@@ -381,6 +381,10 @@ require("lazy").setup({
           },
         })
       end
+    },
+
+    {
+        'nvim-treesitter/nvim-treesitter-textobjects'
     }
 })
 
