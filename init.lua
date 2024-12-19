@@ -395,7 +395,7 @@ require("mason-lspconfig").setup_handlers({
     end,
 })
 
-vim.diagnostic.config({virtual_text = false})
+vim.diagnostic.config({virtual_text = false, signs = false})
 
 -- lsp mappings
 vim.keymap.set("n", "<space>d", vim.diagnostic.open_float)
