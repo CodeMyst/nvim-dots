@@ -141,24 +141,24 @@ require("lazy").setup({
     { "numToStr/Comment.nvim" },
     { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
 
-    -- {
-    --     "rose-pine/neovim",
-    --     priority = 1000,
-    --     lazy = false,
-    --     config = function()
-    --         require("rose-pine").setup({
-    --             enable = {
-    --                 terminal = true
-    --             },
-    --
-    --             styles = {
-    --                 italic = false
-    --             }
-    --         })
-    --
-    --         vim.cmd [[colorscheme rose-pine]]
-    --     end,
-    -- },
+    {
+        "rose-pine/neovim",
+        priority = 1000,
+        lazy = false,
+        config = function()
+            require("rose-pine").setup({
+                enable = {
+                    terminal = true
+                },
+
+                styles = {
+                    italic = false
+                }
+            })
+
+            vim.cmd [[colorscheme rose-pine]]
+        end,
+    },
 
     {
         "tinted-theming/base16-vim",
@@ -166,33 +166,6 @@ require("lazy").setup({
             vim.cmd [[colorscheme base16-tomorrow-night]]
         end
     },
-
-    {
-        "tinted-theming/base16-vim",
-        config = function()
-            vim.cmd [[colorscheme base16-tomorrow-night]]
-        end,
-    },
-
-    -- {
-    --     "rebelot/kanagawa.nvim",
-    --     priority = 1000,
-    --     lazy = false,
-    --     config = function()
-    --         require("kanagawa").setup({
-    --             theme = "dragon",
-    --             commentStyle = { italic = false },
-    --             keywordStyle = { italic = false },
-    --             overrides = function()
-    --                 return {
-    --                     ["@variable.builtin"] = { italic = false },
-    --                 }
-    --             end
-    --         })
-    --
-    --         vim.cmd [[colorscheme kanagawa-dragon]]
-    --     end,
-    -- },
 
     {
         "neovim/nvim-lspconfig",
@@ -278,17 +251,17 @@ require("lazy").setup({
             require("lualine").setup({
                 options = {
                     icons_enabled = false,
-                    sections = {
-                        lualine_a = {'mode'},
-                        lualine_b = {'branch', 'diff', 'diagnostics'},
-                        lualine_c = {'filename'},
-                        lualine_x = {'encoding', 'fileformat', 'filetype'},
-                        lualine_y = {'progress'},
-                        lualine_z = {'location'}
-                    },
                     section_separators = '',
                     component_separators = '',
-                }
+                },
+                sections = {
+                    lualine_a = {'mode'},
+                    lualine_b = {'branch', 'diff', 'diagnostics'},
+                    lualine_c = {{'filename', path = 1}},
+                    lualine_x = {'encoding', 'fileformat', 'filetype'},
+                    lualine_y = {'progress'},
+                    lualine_z = {'location'}
+                },
             })
         end,
     },
@@ -385,6 +358,21 @@ require("lazy").setup({
 
     {
         'nvim-treesitter/nvim-treesitter-textobjects'
+    },
+
+    {
+        "f-person/auto-dark-mode.nvim",
+        opts = {
+            update_interval = 1000,
+            set_dark_mode = function()
+                vim.api.nvim_set_option_value("background", "dark", {})
+                vim.cmd("colorscheme rose-pine")
+            end,
+            set_light_mode = function()
+                vim.api.nvim_set_option_value("background", "light", {})
+                vim.cmd("colorscheme rose-pine")
+            end,
+        },
     }
 })
 
