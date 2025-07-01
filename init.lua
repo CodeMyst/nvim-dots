@@ -38,6 +38,12 @@ vim.opt.linebreak = true
 vim.opt.tabstop = 4
 vim.g.base16_colorspace = 256
 
+if vim.g.vscode then
+    vim.o.cmdheight = 4
+else
+    vim.o.cmdheight = 0
+end
+
 vim.opt.listchars = {
     tab      = '  ',
     nbsp     = '␣',
