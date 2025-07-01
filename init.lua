@@ -465,6 +465,14 @@ cmp.setup({
 
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
+-- set git commit message colorcolumn
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "gitcommit",
+    callback = function()
+        vim.opt_local.colorcolumn = "50,72"
+    end,
+})
+
 -- fix node
 local home_dir = vim.fn.expand("$HOME")
 -- pin nvim to a specific node version, regardless of the project
