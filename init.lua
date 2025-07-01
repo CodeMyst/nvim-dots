@@ -49,6 +49,7 @@ vim.opt.listchars = {
     nbsp     = '␣',
     trail    = '·',
 }
+
 vim.opt.fillchars = {
     fold      = '·',
     foldopen  = '',
@@ -89,8 +90,6 @@ vim.keymap.set({'n', 'x'}, 'cy', '"+y')
 vim.keymap.set({'n', 'x'}, 'cp', '"+p')
 vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 vim.keymap.set({'n', 'x'}, 'x', '"_x')
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set('v', "<", "<gv")
 vim.keymap.set('v', ">", ">gv")
 vim.keymap.set("n", "J", "mzJ`z")
@@ -334,16 +333,6 @@ require("lazy").setup({
       opts = {},
     },
 
-    { "folke/zen-mode.nvim",
-        config = function ()
-            require('zen-mode').setup({
-                window = {
-                    width = 100
-                }
-            })
-        end
-    },
-
     {
       'stevearc/conform.nvim',
       opts = {},
@@ -373,6 +362,26 @@ require("lazy").setup({
                 vim.cmd("colorscheme github_light")
             end,
         },
+    },
+
+    {
+        'echasnovski/mini.move',
+        version = '*',
+        config = function ()
+            require("mini.move").setup({
+                mappings = {
+                    left = '˙',
+                    right = '¬',
+                    down = '∆',
+                    up = '˚',
+
+                    line_left = '˙',
+                    line_right = '¬',
+                    line_down = '∆',
+                    line_up = '˚',
+                },
+            })
+        end
     }
 })
 
