@@ -148,21 +148,15 @@ require("lazy").setup({
     { "JoosepAlviste/nvim-ts-context-commentstring", event = "VeryLazy" },
 
     {
-        "rose-pine/neovim",
-        priority = 1000,
-        lazy = false,
-        config = function()
-            require("rose-pine").setup({
-                enable = {
-                    terminal = true
-                },
-
-                styles = {
-                    italic = false
-                }
+        'projekt0n/github-nvim-theme',
+        name = 'github-theme',
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
+            config = function()
+                require('github-theme').setup({
             })
 
-            vim.cmd [[colorscheme rose-pine]]
+            vim.cmd('colorscheme github_light')
         end,
     },
 
@@ -372,11 +366,11 @@ require("lazy").setup({
             update_interval = 1000,
             set_dark_mode = function()
                 vim.api.nvim_set_option_value("background", "dark", {})
-                vim.cmd("colorscheme rose-pine")
+                vim.cmd("colorscheme github_dark")
             end,
             set_light_mode = function()
                 vim.api.nvim_set_option_value("background", "light", {})
-                vim.cmd("colorscheme rose-pine")
+                vim.cmd("colorscheme github_light")
             end,
         },
     }
