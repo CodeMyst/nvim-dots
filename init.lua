@@ -339,7 +339,11 @@ require("lazy").setup({
       config = function ()
         require("conform").setup({
           formatters_by_ft = {
-              go = { "gofmt" }
+              go = { "gofmt" },
+              javascript = { "prettierd", "prettier", stop_after_first = true },
+              javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+              typescript = { "prettierd", "prettier", stop_after_first = true },
+              typescriptreact = { "prettierd", "prettier", stop_after_first = true },
           },
         })
       end
@@ -482,9 +486,9 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
--- fix node
-local home_dir = vim.fn.expand("$HOME")
--- pin nvim to a specific node version, regardless of the project
-local node_bin =  "/.asdf/installs/nodejs/18.16.0/bin"
-vim.g.node_host_prog = home_dir .. node_bin .. "/node"
-vim.cmd("let $PATH = '" .. home_dir .. node_bin .. ":' . $PATH")
+-- -- fix node
+-- local home_dir = vim.fn.expand("$HOME")
+-- -- pin nvim to a specific node version, regardless of the project
+-- local node_bin =  "/.asdf/installs/nodejs/18.16.0/bin"
+-- vim.g.node_host_prog = home_dir .. node_bin .. "/node"
+-- vim.cmd("let $PATH = '" .. home_dir .. node_bin .. ":' . $PATH")
