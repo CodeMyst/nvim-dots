@@ -155,17 +155,11 @@ require("lazy").setup({
     },
 
     {
-        "tinted-theming/base16-vim",
-        config = function ()
-            vim.cmd [[colorscheme base16-tomorrow-night]]
-        end
-    },
-
-    {
-        "neovim/nvim-lspconfig",
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
         dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
         },
     },
 
@@ -210,24 +204,24 @@ require("lazy").setup({
 
     {
         "windwp/nvim-ts-autotag",
+        config = function()
+            require('nvim-ts-autotag').setup({
+                enable = true,
+                filetypes = { "html", "xml", "tsx" },
+            })
+        end
     },
 
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()
-            require('nvim-ts-autotag').setup({
-                enable = true,
-                filetypes = { "html", "xml", "tsx" },
-            })
-
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
                 highlight = { enable = true },
                 endwise = { enable = true },
                 indent = { enable = false },
-                autotag = { enable = true, enable_close_on_slash = false },
                 matchup = { enable = true }
             })
         end,
@@ -402,14 +396,6 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-require("mason-lspconfig").setup_handlers({
-    function(server_name)
-        require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
-        })
-    end,
-})
 
 vim.diagnostic.config({virtual_text = false, signs = false})
 
