@@ -131,11 +131,6 @@ require("lazy").setup({
 
     "kevinhwang91/nvim-bqf",
 
-    {
-        "windwp/nvim-ts-autotag",
-        event = "VeryLazy",
-    },
-
     "m4xshen/autoclose.nvim",
 
     {
@@ -214,10 +209,18 @@ require("lazy").setup({
     },
 
     {
+        "windwp/nvim-ts-autotag",
+    },
+
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        event = "VeryLazy",
         config = function()
+            require('nvim-ts-autotag').setup({
+                enable = true,
+                filetypes = { "html", "xml", "tsx" },
+            })
+
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
